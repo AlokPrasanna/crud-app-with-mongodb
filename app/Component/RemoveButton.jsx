@@ -1,10 +1,25 @@
-import React from 'react'
-import { HiOutlineTrash } from 'react-icons/hi'
+"use client";
+import React, { useState } from 'react';
+import { HiOutlineTrash } from 'react-icons/hi';
 
-const RemoveButton = () => {
+const RemoveButton =  ({deleteId}) => {
+  // const [IsClickDeleteButton, setClickDeleteButton] = useState(false);
+
+  const HandelRemoveButton = async() => {
+    
+    const DeleteId = deleteId;
+
+    const Confirmed = confirm("Are you sure? ");
+    if(Confirmed){
+          await fetch(`http://localhost:3000/Api/Topics?id=${DeleteId}`, {
+            method:"DELETE",
+          });
+        }
+  }
+  
   return (
     <div>
-        <button className='text-red-400'>
+        <button onClick={HandelRemoveButton} className='text-red-400'>
             <HiOutlineTrash size={24} />
         </button>    
     </div>
