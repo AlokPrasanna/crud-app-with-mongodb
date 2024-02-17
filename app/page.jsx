@@ -1,9 +1,9 @@
-import HomePage from "./Pages/HomePage";
+import TopicPage from "./Pages/TopicPage";
 
 export default function Home() {
   return (
    <div>
-      <HomePage />
+      <TopicPage />
    </div>
   );
 }
