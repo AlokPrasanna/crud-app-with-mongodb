@@ -1,0 +1,25 @@
+/* CSS */
+.form-control {
+    width: 100%;
+    padding: 1rem;
+    background-color: none;
+}
+.form-label {
+    position: absolute;
+    top: 50%; 
+    left: 1rem;
+    border: none;
+    transform: translateY(-10%);
+    font-size: 1rem;
+    color: white;
+    transition: all 0.3s ease;
+    pointer-events: none;
+}
+
+.form-label.small {
+    top: 0;
+    left: 1rem;
+    font-size: 0.75rem;
+    color: blue;
+}
+

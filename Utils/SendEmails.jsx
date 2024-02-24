@@ -1,27 +1,26 @@
-const nodemailer = require("nodemailer");
+import nodemailer from "nodemailer";
 
-module.exports = async(email,subject,text) => {
+export default async function SendEmails(email, subject, text) {
     try {
-        const Transpoter = nodemailer.createTransport({
-            host:process.env.HOST,
-            service:process.env.SERVICE,
-            port:Number(process.env.EMAIL_PORT),
-            secure:BOOLEAN(process.env.SECURE),
-            auth:{
-                user:process.env.USER,
-                pass:process.env.PASS
+        const transporter = nodemailer.createTransport({
+            host: process.env.HOST,
+            service: process.env.SERVICE,
+            port: Number(process.env.EMAIL_PORT),
+            secure: process.env.SECURE === "true",
+            auth: {
+                user: process.env.USER,
+                pass: process.env.PASS
             }
         });
 
-        await Transpoter.sendMail({
-            from:process.env.USER,
-            to:email,
-            subject:subject,
-            text:text
+        await transporter.sendMail({
+            from: process.env.USER,
+            to: email,
+            subject,
+            text
         });
 
         console.log("Email sent Successfully");
-        
     } catch (error) {
         console.log(error);
     }
