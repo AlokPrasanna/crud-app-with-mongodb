@@ -4,7 +4,7 @@
 
 ## Technologies
 
--Next Js
--HTML
--Tailwind
--Mangodb
+- Next Js
+- HTML
+- Tailwind
+- Mangodb
