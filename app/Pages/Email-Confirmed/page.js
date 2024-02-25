@@ -12,13 +12,16 @@ const EmailVerifyPage = () => {
   useEffect(() => {
     const VerifyEmailUrl = async () => {
       try {
-        const Url = `http://localhost:3000/api/verify-email?userId=${Params.id}/&token=${Params.token}`
+        const Url = `http://localhost:3000/api/verify-email?userId=${Params.id}/&token=${Params.token}`;
+        setValidUrl(true);
       } catch (error) {
         console.log(error);
         setValidUrl(false);
       }
     }
-  })
+
+    VerifyEmailUrl();
+  },[])
    
   return (
     <div>
@@ -29,14 +32,16 @@ const EmailVerifyPage = () => {
         <Fragment>
           { ValidUrl ? (
             <div className='flex flex-col items-center justify-center'>
-              <Image className='mt-3 mb-3' src='/Images/success.png' alt='success-image'/>
-              <h1 className='mb-3'>Email Verified Successfully</h1>
+              <Image className='mt-3 mb-3' width={200} height={200} src='/Images/success.png' alt='success-image'/>
+              <h1 className='mb-3 text-3xl font-semibold'>Email Verified Successfully</h1>
               <Link href='/'>
-                <button className='text-white bg-green-500 rounded-[10px] text-center text-xl'>Login</button>
+                <button className='text-white bg-green-500 rounded-[10px] text-2xl text-center px-3 py-2 w-[100%]'>Login</button>
               </Link>
             </div>
           ) : (
-            <h1>404 Page Not Found</h1>
+            <div className='flex items-center justify-center'>
+              <h1 className='justify-center text-3xl font-bold'>404 | Page Not Found</h1>
+            </div>   
           )}
         </Fragment>
       </div>
