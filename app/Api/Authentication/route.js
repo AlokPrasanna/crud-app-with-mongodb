@@ -43,7 +43,7 @@ export async function POST(req) {
 
     user = await new User({ firstName, lastName, email, password: hashPassword, verified }).save();
 
-    const token = await new Token({
+    const token = await new Token({ 
       userId: user._id,
       token: crypto.randomBytes(32).toString("hex"),
     }).save();

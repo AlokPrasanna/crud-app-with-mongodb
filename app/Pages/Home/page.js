@@ -1,8 +1,8 @@
 'use client';
 import React,{useState} from "react";
-import Login from '../Component/Login';
-import Registration from "../Component/Registration";
-import NavigationBar from '../Component/NavigationBar';
+import Login from '../../Component/Login';
+import Registration from "../../Component/Registration";
+import NavigationBar from '../../Component/NavigationBar';
 
 const HomePage = () => {  
   const [ShowLogin, setShowLogin] = useState(true);

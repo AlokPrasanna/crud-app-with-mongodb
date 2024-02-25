@@ -1,7 +1,7 @@
 import React from 'react';
-import NavigationBar from '../Component/NavigationBar';
-import TopicCard from '../Component/TopicCard';
-import AddTopic from '../Component/AddTopic';
+import NavigationBar from '../../Component/NavigationBar';
+import TopicCard from '../../Component/TopicCard';
+import AddTopic from '../../Component/AddTopic';
 
 const HomePage = () => {
   return (

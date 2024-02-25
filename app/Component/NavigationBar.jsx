@@ -16,10 +16,10 @@ const NavigationBar = () => {
                     <Link className=" hover:text-slate-300" href={'/'}>Home</Link>
                 </div>
                 <div className="flex px-3 py-6 mx-auto mr-4 text-xl">
-                    <Link className=" hover:text-slate-300" href={'/'}>About</Link>
+                    <Link className=" hover:text-slate-300" href={'/about'}>About</Link>
                 </div>
                 <div className="flex px-3 py-6 mx-auto mr-4 text-xl">
-                    <Link className=" hover:text-slate-300" href={'/'}>Contact Us</Link>
+                    <Link className=" hover:text-slate-300" href={'/contact'}>Contact Us</Link>
                 </div>
             </div>         
         </nav>    
